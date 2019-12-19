@@ -34,24 +34,39 @@ public class Aquarium {
 
 		// Aufruf des Konstruktors der Methode Zufall
 		Random zufall = new Random();		
-//		
-		int xzufall; 
-//		
+		
+		int xzuf1, xzuf2; 
+		
+		// Array vom Typ Fisch namens fische in der Grösse hoehe wird angelegt
+		this.fische = new Fisch[this.hoehe]; 		
+	
+		
+		// Es werden Fisch-Elemente pro Zeile angelegt
+		for (int i = 0; i < this.hoehe; i++)  {			
 
-		this.fische = new Fisch[this.hoehe]; // Array vom Typ Fisch namens fische in der Grösse hoehe wird angelegt
-
-		for (int i = 0; i < this.hoehe; i = i+3)  {
-
-			// generieren eines Zufalls-Wertes im Bereich Beckenbreite ohne die Länge Fisch
-	    	xzufall = zufall.nextInt((breite - 9));
-			fische[i] = new Haie(xzufall, i, true);
+			// Generieren eines zufälligen Fisch-Typs
+			xzuf1 = zufall.nextInt(3);
+			//System.out.println(this.hoehe+1);
+			switch(xzuf1)   {
 			
-			xzufall = zufall.nextInt((breite - 5));
-			fische[i+1] = new Kugelf(xzufall, i, true);
+			case 0:
+				// generieren eines Zufalls-Wertes im Bereich Beckenbreite ohne die Länge Fisch
+				xzuf2 = zufall.nextInt((breite - 9));
+				fische[i] = new Haie(xzuf2, i, true);
+//				System.out.println("xxx");
+				break;
 			
-			xzufall = zufall.nextInt((breite - 4));
-			fische[i+2] = new Schwertf(xzufall, i, true);
-		}
+			case 1:	
+				xzuf2 = zufall.nextInt((breite - 5));
+				fische[i] = new Kugelf(xzuf2, i, true);
+				break;
+				
+			case 2:
+				xzuf2 = zufall.nextInt((breite - 4));
+				fische[i] = new Schwertf(xzuf2, i, true);
+				break;
+				}
+			}	
 	}
 //	
 
@@ -90,8 +105,9 @@ public class Aquarium {
 		System.out.print('|');
 	}
 
+	
 	/* Hier wird eine Fisch Zeile aufgebaut für die String-Ausgabe */
-
+	
 	private void gibZeileAus(int zeile) {
 
 		int xwert = this.fische[zeile].getXpos();
@@ -105,6 +121,7 @@ public class Aquarium {
 		if (this.fische[zeile].getDir()) {
 
 			System.out.print(fische[zeile].getShape());
+			
 
 		} else {
 			System.out.print(fische[zeile].getShape());
