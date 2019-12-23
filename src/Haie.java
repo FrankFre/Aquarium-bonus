@@ -5,7 +5,7 @@ public class Haie extends Fisch {
 
 	public final static String shape1 = "><====\\\\\\>";
 	final static String shape2 = "<///====><";
-	static double sprung = 0.25f;
+	public static double sprung = 0.25f;
 
 	/* Konstruktor */
 
@@ -27,4 +27,11 @@ public class Haie extends Fisch {
 		}
 	}
 
+	@Override
+	protected int getHoehe() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
 }
+

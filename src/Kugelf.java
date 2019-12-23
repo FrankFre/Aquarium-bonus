@@ -29,6 +29,13 @@ public class Kugelf extends Fisch {
 				return Kugelf.shape2;
 			}
 		}
+
+
+	@Override
+	protected int getHoehe() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 
 }
