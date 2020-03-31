@@ -32,7 +32,6 @@ public String getShape() {
 
 @Override
 protected int getHoehe() {
-	// TODO Auto-generated method stub
 	return 0;
 }
 
