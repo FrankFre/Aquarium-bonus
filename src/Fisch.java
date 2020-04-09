@@ -3,18 +3,13 @@ import java.util.Random;
 public abstract class Fisch {
 	
 	/* Instanzvariablen */
-
 	public static char[] getShape;					// unklar char-Array ?
-	
 	int xpos; 				// Position x-Achse
 	int ypos; 				// Ebene der Schwimmrichtung
 	boolean dir; 			// Schwimmrichtung rechts ist true
     int laenge=0; 			// Länge des Fisches
-//	String shape;			// Umriss des Fisches
-	
     int zuf2, zuf3;
-    
-    
+      
 
 	/* Konstruktor */
 
@@ -23,13 +18,9 @@ public abstract class Fisch {
 		this.xpos = xpos;
 		this.ypos = ypos;
 		this.dir = dir;
-//		this.shape = shape;
-//		this.laenge = laenge;
 	}
 	
-	
 	Random zuf = new Random();
-	
 
 	
 	/* getter und setter Methoden */

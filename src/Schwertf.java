@@ -10,10 +10,7 @@ public class Schwertf extends Fisch  {
 	/* Konstruktor */
 
 	public Schwertf(int xpos, int ypos, boolean dir) {
-//	String shape1 = "><>-";
-//	String shape2 = "-<><";
-//  double sprung = 0.2f;
-    
+
 	super(xpos, ypos, dir);
 	this.laenge = shape1.length();
 }
@@ -32,6 +29,7 @@ public String getShape() {
 
 @Override
 protected int getHoehe() {
+	// TODO Auto-generated method stub
 	return 0;
 }
 

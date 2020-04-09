@@ -9,11 +9,7 @@ public class Kugelf extends Fisch {
 	/* Konstruktor */
 	
 	public Kugelf(int xpos, int ypos, boolean dir) {
-//		String shape1 = "><()>";
-//		String shape2 = "<()><";
-//	    double sprung = 0.1f;
-	    
-//		super(xpos, ypos, dir, shape1, shape2, sprung);
+
 		super(xpos, ypos, dir);
 		this.laenge = shape1.length();
 
@@ -36,6 +32,7 @@ public class Kugelf extends Fisch {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 	
 
 }
