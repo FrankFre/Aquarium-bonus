@@ -7,8 +7,8 @@ public abstract class Fisch {
 	int xpos; 				// Position x-Achse
 	int ypos; 				// Ebene der Schwimmrichtung
 	boolean dir; 			// Schwimmrichtung rechts ist true
-    int laenge=0; 			// Länge des Fisches
-    int zuf2, zuf3;
+    int laenge; 			// Länge des Fisches
+    int zuf2;
       
 
 	/* Konstruktor */
@@ -43,30 +43,25 @@ public abstract class Fisch {
 
 
 	// Bewegen der Fisch-Koordinate - linkes Ende vom Fisch ist der Bezugspunkt 
-	
-	public void bewegen(int breite) { 			// breite ist Aquarium-Breite
+	public void bewegen(int breite) { 			
 		
 		/* Berechnung des Wechsel-Ereignisses für den Etagenwechsel */
-		zuf2 = (int) (1/this.getSprung()); 			// Faktor 2 erzeugt Ergebnis 0 und 1 jeweils für auf- und ab-Sprung
-//		System.out.println(this.getSprung());
-//		zuf3 = zuf.nextInt(zuf2);
-		zuf3 = 1;									// Test-Wertzuweisung - 1 setzte den y-Wert um eins höher
-		
-			
-		if ((this.ypos < this.getHoehe()) && (zuf3 == 1))   {		// Fisch schwimmt eine Ebene höher
-		
+		zuf2 = zuf.nextInt((int) (1/this.getSprung())); 			// Faktor 2 erzeugt Ergebnis 0 und 1 jeweils für auf- und ab-Sprung
+	
+		if ((this.ypos < Aquarium_b.getHoehe()-1) && (zuf2 == 1))   {		// Fisch schwimmt eine Ebene höher
 			this.ypos +=1;
 			
-		} else if ((this.ypos > 0) && (zuf3 == 0))   {				// y-Koordinate um eine Ebene tiefer
-				
+		} else if ((this.ypos > 0) && (zuf2 == 0))   {				// y-Koordinate um eine Ebene tiefer
 			this.ypos -=1;
 			}
 		
 		
 		
+		
+		
 		if (this.dir == true) {										// x-Koordinate um einen Wert nach rechts, falls Rand noch nicht errreicht
 
-			if (this.xpos < (breite - this.laenge - 1)) {
+			if (this.xpos < (breite - this.laenge)) {
 				this.xpos += 1;
 	
 			} else {												// x-Koordinate um einen Wert nach links
@@ -97,7 +92,7 @@ public abstract class Fisch {
 		return null;
 	}
 
-	public double getSprung() {
+	public float getSprung() {
 		// TODO Auto-generated method stub
 		return 0;
 	}

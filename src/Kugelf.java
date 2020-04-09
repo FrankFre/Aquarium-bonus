@@ -3,11 +3,16 @@ public class Kugelf extends Fisch {
 	
 	static String shape1 = "><()>";
 	static String shape2 = "<()><";
-	static double sprung = 0.1f;
+	static float sprung = 0.1f;
 
 	
-	/* Konstruktor */
 	
+	
+	public float getSprung() {
+		return sprung;
+	}
+
+
 	public Kugelf(int xpos, int ypos, boolean dir) {
 
 		super(xpos, ypos, dir);

@@ -4,7 +4,7 @@ public class Schwertf extends Fisch  {
 
 	static String shape1 = "><>-";
 	static String shape2 = "-<><";
-	static double sprung = 0.2f;
+	static float sprung = 0.2f;
 
 	
 	/* Konstruktor */
@@ -25,6 +25,11 @@ public String getShape() {
 			return Schwertf.shape2;
 		}
 	}
+
+
+public float getSprung() {
+	return sprung;
+}
 
 
 @Override
