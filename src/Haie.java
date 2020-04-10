@@ -3,7 +3,8 @@ public class Haie extends Fisch {
 
 	/* Klassenvariablen */
 
-	final static String shape1 = "><====\\\\\\>";			// seltsames Aussehen wegen der Erkennung der Backslashes als Steuerzeichen
+	final static String shape1 = "><====\\\\\\>"; // seltsames Aussehen wegen der Erkennung der Backslashes als
+													// Steuerzeichen
 	final static String shape2 = "<///====><";
 	public static float sprung = 0.25f;
 
@@ -14,7 +15,6 @@ public class Haie extends Fisch {
 		this.laenge = shape1.length();
 	}
 
-	@Override
 	public String getShape() {
 		if (this.dir) {
 			return Haie.shape1;
@@ -27,15 +27,8 @@ public class Haie extends Fisch {
 		return sprung;
 	}
 
-	@Override
-	protected int getHoehe() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getHoehe() {
+		return ypos;
 	}
 
-
-	
-
-	
 }
-

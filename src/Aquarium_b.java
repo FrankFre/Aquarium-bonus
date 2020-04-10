@@ -6,10 +6,10 @@ public class Aquarium_b {
 	private static int breite;
 	public static int hoehe;
 	int a = 0; // Zählvariable
-	int b = 0;
+	int b = 0; // mit Wasser füllen
 	int c = 0;
-	int d = 0; // Breite
 	int i = 0; // Zählvariable
+
 
 	private Fisch[] fische;
 
@@ -32,15 +32,14 @@ public class Aquarium_b {
 //	Methode füllen füllt das Becken entsprechend seiner Höhe mit einer
 //	entsprechenden Anzahl von Fischen
 	public void fuellen() {
-
+		
 		Random zufall = new Random();
 
-		int xzuf1, xzuf2; // Zufallswert Fischtyp und x-Koordinate
-
-		// Array vom Typ Fisch namens fische entsprechend der hoehe wird angelegt (10)
+		int xzuf1, xzuf2; 
+		
 		this.fische = new Fisch[Aquarium_b.hoehe];
-
-		// Es werden Fisch-Elemente jeweils eines pro Zeile angelegt (10)
+			
+		// Es werden Fisch-Elemente jeweils eines pro Zeile angelegt
 		for (int i = 0; i < Aquarium_b.hoehe; i++) {
 
 			// Generieren eines zufälligen von 3 Fisch-Typen
@@ -72,19 +71,15 @@ public class Aquarium_b {
 		// Schleife so oft wie Aquariumhöhe:
 		for (int i = 0; i < Aquarium_b.hoehe; i++) {
 
-			// Gibt linken Rand vom Becken aus
-			this.gibRandAus();
+			Aquarium_b.gibRandAus();
 
-			// Gib eine Zeile Wasser mit Fisch aus
 			this.gibZeileAus(i);
 
-			// Gib rechten Rand vom Becken aus
-			this.gibRandAus();
+			Aquarium_b.gibRandAus();
 
 			System.out.println();
 		}
 
-		// Gib eine Zeile Aquariumboden aus
 		this.gibBodenAus();
 	}
 
@@ -99,7 +94,7 @@ public class Aquarium_b {
 		System.out.println('+');
 	}
 
-	private void gibRandAus() {
+	private static void gibRandAus() {
 		System.out.print('|');
 	}
 
@@ -107,34 +102,27 @@ public class Aquarium_b {
 	
 	
 	// Hier wird eine Fisch Zeile aufgebaut für die String-Ausgabe
-	// es muss die Möglichkeit geschaffen werden, mehrere Fische in einer Zeile
-	// darzustellen
-	private void gibZeileAus(int zeile) {
 
+	private void gibZeileAus(int zeile) {
+		
+		
+		//  UNSCHÖN WO DEKLARIEREN ??? immer wieder neu ?
 		char[] reihe = new char[Aquarium_b.breite];
 		
-		// das Array für Ausgabezeile wird mit mit Wasser gefüllt
-		for (d = 0; d < Aquarium_b.breite; d++) {
-
-			reihe[d] = ' ';
+		
+		for (b = 0; b < Aquarium_b.breite; b++) {
+			reihe[b] = ' ';
 		}
 
 		// Iteration zur Suche der Fische in der Höhe der aktuell betrachteten Zeile
 		for (a = 0; a < Aquarium_b.hoehe; a++) {
 
 			if (fische[a].ypos == zeile) {
-//
-//				// Einsetzen des Shapes des Fisch-Objekts, das in der betrachteten Zeile
-//				// unterwegs ist
+				
+					// in das Ausgabe-Array schreiben
+					for (b = 0; b < this.fische[a].laenge; b++) {
 
-//					// für die Länge des Strings des Fisches wird der String char 
-//					// in das Ausgabe-Array geschrieben
-
-					for (b = 0; b < this.fische[zeile].laenge; b++) {
-
-						// Im reihe-Array wird an den entsprechenden x-Indizes der gewandelte
-						// String-Char eingesetzt
-						reihe[b + fische[zeile].xpos] = fische[zeile].getShape().charAt(b);
+						reihe[fische[a].xpos + b] = fische[a].getShape().charAt(b);
 					}
 			}
 		}
@@ -152,6 +140,8 @@ public class Aquarium_b {
 
 		for (int i = 0; i < Aquarium_b.hoehe; i++) {
 			fische[i].bewegen(Aquarium_b.breite);
+			System.out.println("Fisch " + i + ' ' + fische[i].getHoehe());
+			
 		}
 	}
 }
