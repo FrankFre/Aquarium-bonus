@@ -35,7 +35,7 @@ public abstract class Fisch {
 	// Bewegen der Fisch-Koordinate - linkes Ende vom Fisch ist der Bezugspunkt
 	public void bewegen(int breite) {
 
-		/* Berechnung des Wechsel-Ereignisses für den Etagenwechsel */
+		/* Berechnung des Wechsel-Ereignisses für den Etagenwechsel Fische wechseln  */
 		zuf2 = zuf.nextInt((int) (1 / this.getSprung())); // Faktor 2 erzeugt Ergebnis 0 und 1 jeweils für auf- und
 															// ab-Sprung
 
@@ -67,20 +67,16 @@ public abstract class Fisch {
 		}
 	}
 
-//	protected abstract int getHoehe();
 
 	public String getShape() {
-
 		return null;
 	}
 
 	public float getSprung() {
-
 		return 0;
 	}
 
 	public int getHoehe() {
-
 		return 0;
 	}
 

@@ -3,7 +3,7 @@ public class Haie extends Fisch {
 
 	/* Klassenvariablen */
 
-	final static String shape1 = "><====\\\\\\>"; // seltsames Aussehen wegen der Erkennung der Backslashes als
+	final static String shape1 = "><====\\\\\\>";   // Erkennung der Backslashes als
 													// Steuerzeichen
 	final static String shape2 = "<///====><";
 	public static float sprung = 0.25f;

@@ -17,11 +17,12 @@ public class Aquarium_b_main {
 //	 		- alles anzeigen
 		
 		// Iterationsschleife, um die Fische zu bewegen
-		for (int i = 0; i < 2 * x; i++) {							//Laufzeit
+		for (int i = 0; i < 2 * x; i++) {							//Laufzeit erzeugen
+			
 			// Schleife zur Initialisierung einer "freien" Ausgabenkonsole
-//			for (int j = 0; j < 10; j++) {
-//				System.out.println();
-//			}
+			for (int j = 0; j < 10; j++) {
+				System.out.println();
+			}
 
 			meinAquarium.anzeigen();
 			meinAquarium.fischeBewegen();
